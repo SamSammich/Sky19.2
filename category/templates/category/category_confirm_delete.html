@@ -1,0 +1,20 @@
+{% extends 'catalogapp/base.html'%}
+
+{% block content %}
+<div class="col-12">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <p> Delete material "{{object.title}}"?</p>
+                        <button type="submit" class="btn btn-danger">YES</button>
+                        <a href="{% url 'category:list' %}" class="btn btn-warning">NO</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
