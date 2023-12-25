@@ -17,7 +17,7 @@ class Product(models.Model):
 
     views_count = models.PositiveIntegerField(default=0, verbose_name="Views")
     is_published = models.BooleanField(default=True, verbose_name='published')
-    slug = models.CharField(max_length=150, verbose_name='slug',**NULLABLE )
+    slug = models.CharField(max_length=150, verbose_name='slug', **NULLABLE)
 
     def __str__(self):
         return f'{self.name}: {self.category}'
@@ -28,3 +28,18 @@ class Product(models.Model):
         ordering = ('date_of_creation',)
 
 
+class Version(models.Model):
+    product_1 = models.CharField(max_length=75, verbose_name='product_1')
+    version_number = models.PositiveIntegerField(default=None, verbose_name='version_number')
+    version_name = models.CharField(max_length=50, verbose_name='version_name')
+    current_version = models.PositiveIntegerField(default=None, verbose_name='current_version')
+
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='product')
+
+    def __str__(self):
+        return f'{self.product_1}'
+
+
+    class Meta:
+        verbose_name ='product'
+        verbose_name_plural='products'
