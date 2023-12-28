@@ -18,6 +18,20 @@ class ProductListView(ListView):
         queryset = queryset.filter(is_published=True)
         return queryset
 
+    def get_context_data(self, *args, **kwargs):
+        context_data = super().get_context_data(*args, **kwargs)
+        if self.kwargs.get('pk'):
+            category = Category.objects.get(pk=self.kwargs.get('pk'))
+            context_data['title'] = f'Products category - {category.name}'
+
+        for product in context_data['object_list']:
+            version = product.version_set.filter(is_active=True).first()
+            if version:
+                product.number = version.number
+            else:
+                product.number = 'NONE'
+        return context_data
+
 
 def contacts(request):
     if request.method == 'POST':
@@ -102,6 +116,17 @@ def toggle_activity(request, pk):
         product_item.is_available = True
     product_item.save()
     return redirect(reverse('catalogapp:index'))
+
+class VersionCreateView(CreateView):
+    model = Version
+    form_class = VersionForm
+    success_url = reverse_lazy('catalog:home')
+
+
+class VersionUpdateView(CreateView):
+    model = Version
+    form_class = VersionForm
+    success_url = reverse_lazy('catalog:home')
 
 
 '''def contacts(request):

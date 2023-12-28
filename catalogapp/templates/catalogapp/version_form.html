@@ -1,0 +1,30 @@
+{% extends 'catalogapp/base.html' %}
+{% block content %}
+<form method="post" enctype=multipart/form-data class="row">
+    <div class="col-6">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">
+                    {% if object.pk %}
+                    Change version
+                    {% else %}
+                    Create version
+                    {% endif %}
+                </h4>
+            </div>
+            <div class="card-body">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-outline-success">
+                    {% if object.pk %}
+                    Change
+                    {% else %}
+                    Add
+                    {% endif %}
+                </button>
+            </div>
+        </div>
+    </div>
+
+</form>
+{% endblock %}

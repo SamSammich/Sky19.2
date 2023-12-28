@@ -29,10 +29,13 @@ class Product(models.Model):
 
 
 class Version(models.Model):
+    activity = [(True, 'Activate'),
+                (False, 'Deactivate')]
     product_1 = models.CharField(max_length=75, verbose_name='product_1')
     version_number = models.PositiveIntegerField(default=None, verbose_name='version_number')
     version_name = models.CharField(max_length=50, verbose_name='version_name')
-    current_version = models.PositiveIntegerField(default=None, verbose_name='current_version')
+    #current_version = models.PositiveIntegerField(default=None, verbose_name='current_version')
+    is_active = models.BooleanField(choices=activity, default=False, verbose_name='is_active')
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='product')
 
