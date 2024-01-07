@@ -1,0 +1,142 @@
+[
+    {
+        "model": "catalogapp.product",
+        "pk": 9,
+        "fields": {
+            "name": "Giant Panda",
+            "description": "The giant panda is perhaps the most powerful symbol in the world when it comes to species conservation",
+            "avatar": "product/g_panda_adF2OXZ.jpg",
+            "category": 1,
+            "price_for_one": 125,
+            "date_of_creation": "2023-12-17",
+            "last_change_date": null,
+            "is_available": true,
+            "views_count": 9,
+            "is_published": true,
+            "slug": "giant-panda"
+        }
+    },
+    {
+        "model": "catalogapp.product",
+        "pk": 10,
+        "fields": {
+            "name": "Red Panda",
+            "description": "The red panda is slightly larger than a domestic cat with a bear-like body and thick russet fur.",
+            "avatar": "product/red_TsA7S6z.jpg",
+            "category": 2,
+            "price_for_one": 150,
+            "date_of_creation": null,
+            "last_change_date": null,
+            "is_available": true,
+            "views_count": 8,
+            "is_published": true,
+            "slug": "red-panda"
+        }
+    },
+    {
+        "model": "catalogapp.product",
+        "pk": 11,
+        "fields": {
+            "name": "Qinling Panda",
+            "description": "Qinling pandas are known to inhabit the Qin mountains of central China..",
+            "avatar": "product/Q_panda.jpeg",
+            "category": 3,
+            "price_for_one": 120,
+            "date_of_creation": "2023-12-17",
+            "last_change_date": null,
+            "is_available": true,
+            "views_count": 5,
+            "is_published": true,
+            "slug": "qinling-panda"
+        }
+    },
+    {
+        "model": "catalogapp.product",
+        "pk": 18,
+        "fields": {
+            "name": "Somon",
+            "description": "test1",
+            "avatar": "product/photo_2023-04-02_17-40-21.jpg",
+            "category": null,
+            "price_for_one": 7,
+            "date_of_creation": null,
+            "last_change_date": null,
+            "is_available": true,
+            "views_count": 23,
+            "is_published": true,
+            "slug": "somon"
+        }
+    },
+    {
+        "model": "catalogapp.version",
+        "pk": 1,
+        "fields": {
+            "product_1": "Somon",
+            "version_number": 3,
+            "version_name": "Good",
+            "current_version": 3,
+            "is_active": false,
+            "product": 18
+        }
+    },
+    {
+        "model": "catalogapp.version",
+        "pk": 2,
+        "fields": {
+            "product_1": "django",
+            "version_number": 5,
+            "version_name": "djago_good",
+            "current_version": 5,
+            "is_active": false,
+            "product": 18
+        }
+    },
+    {
+        "model": "catalogapp.version",
+        "pk": 3,
+        "fields": {
+            "product_1": "Panda",
+            "version_number": 1,
+            "version_name": "Good",
+            "current_version": 1,
+            "is_active": false,
+            "product": 9
+        }
+    },
+    {
+        "model": "catalogapp.version",
+        "pk": 4,
+        "fields": {
+            "product_1": "Panda",
+            "version_number": 1,
+            "version_name": "Good",
+            "current_version": 1,
+            "is_active": false,
+            "product": 9
+        }
+    },
+    {
+        "model": "catalogapp.version",
+        "pk": 5,
+        "fields": {
+            "product_1": "Panda",
+            "version_number": 1,
+            "version_name": "Good",
+            "current_version": 1,
+            "is_active": false,
+            "product": 9
+        }
+    },
+    {
+        "model": "catalogapp.version",
+        "pk": 6,
+        "fields": {
+            "product_1": "Panda",
+            "version_number": 1,
+            "version_name": "Good",
+            "current_version": 1,
+            "is_active": false,
+            "product": 9
+        }
+    }
+]

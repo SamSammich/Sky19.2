@@ -4,5 +4,12 @@
         <li><a href="{% url 'catalogapp:index' %}" class="text-white">Main</a></li>
         <li><a href="{% url 'category:list' %}" class="text-white">Category</a></li>
         <li><a href="{% url 'catalogapp:contacts' %}" class="text-white">Contact</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'users:profile' %}" class="text-white">Profile</a></li>
+            <li><a href="{% url 'users:logout' %}" class="text-white">Logout</a></li>
+        {% else %}
+            <li><a href="{% url 'users:login' %}" class="text-white">Login</a></li>
+            <li><a href="{% url 'users:register' %}" class="text-white">Registration</a></li>
+        {% endif %}
     </ul>
 </div>
