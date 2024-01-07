@@ -47,7 +47,7 @@ class VersionForm(StyleFormMixin, forms.ModelForm):
         cleaned_data = self.cleaned_data.get('is_active')
         # print(self.__dict__)
         if cleaned_data:
-            version = self.cleaned_data['product'].version_set.filter(is_active=True)
+            version = self.cleaned_data['product_1'].version_set.filter(is_active=True)
             if version:
                 raise forms.ValidationError('Error, Product already has active version!')
                 # for vers in version:   #  это вариант с удалением активности остальных версий

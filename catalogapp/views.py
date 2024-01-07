@@ -6,6 +6,7 @@ from pytils.translit import slugify
 
 from catalogapp.forms import ProductForm, VersionForm
 from catalogapp.models import Product, Version
+from category.models import Category
 
 
 # Create your views here.
@@ -120,13 +121,13 @@ def toggle_activity(request, pk):
 class VersionCreateView(CreateView):
     model = Version
     form_class = VersionForm
-    success_url = reverse_lazy('catalog:home')
+    success_url = reverse_lazy('catalogapp:index')
 
 
 class VersionUpdateView(CreateView):
     model = Version
     form_class = VersionForm
-    success_url = reverse_lazy('catalog:home')
+    success_url = reverse_lazy('catalogapp:index')
 
 
 '''def contacts(request):

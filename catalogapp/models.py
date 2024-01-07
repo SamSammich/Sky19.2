@@ -14,7 +14,6 @@ class Product(models.Model):
     date_of_creation = models.DateField(verbose_name='date_of_creation', **NULLABLE)
     last_change_date = models.DateField(verbose_name='last_change_date', **NULLABLE)
     is_available = models.BooleanField(default=True, verbose_name='available')
-
     views_count = models.PositiveIntegerField(default=0, verbose_name="Views")
     is_published = models.BooleanField(default=True, verbose_name='published')
     slug = models.CharField(max_length=150, verbose_name='slug', **NULLABLE)
@@ -34,7 +33,7 @@ class Version(models.Model):
     product_1 = models.CharField(max_length=75, verbose_name='product_1')
     version_number = models.PositiveIntegerField(default=None, verbose_name='version_number')
     version_name = models.CharField(max_length=50, verbose_name='version_name')
-    #current_version = models.PositiveIntegerField(default=None, verbose_name='current_version')
+    current_version = models.PositiveIntegerField(default=None, verbose_name='current_version')
     is_active = models.BooleanField(choices=activity, default=False, verbose_name='is_active')
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='product')
